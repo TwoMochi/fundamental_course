@@ -2,9 +2,9 @@ name: Linting, Testing, Building
 
 on: 
   push:
-    branches: [main] # Убедитесь, что у вас именно main, а не master
+    branches: [master] # Убедитесь, что у вас именно main, а не master
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   pipeline: # Исправлено с "pipline"
