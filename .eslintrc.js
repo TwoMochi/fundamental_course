@@ -41,7 +41,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'eslint space-before-blocks': ["never"],
+        'eslint space-before-blocks': 'off',
         'i18next/no-literal-string': [
             'error',
             {
