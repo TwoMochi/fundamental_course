@@ -10,5 +10,7 @@
   "throw error": "throw error",
   "Главная": "Main",
   "О сайте": "About us",
-  "Переключить": "Toggle"
+  "Переключить": "Toggle",
+  "Короткий язык" : "En",
+  "Войти" : "Sign up"
 }

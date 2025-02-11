@@ -3,5 +3,28 @@
     "public/locales",
     "src/shared/config/i18n"
   ],
-  "eslint.codeActionsOnSave.mode": "all"
-}
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    },
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.run": "onSave",
+  "eslint.codeActionsOnSave.rules": null,
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.snippet": [
+    "css",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.configFile": ".stylelintrc.json",
+  "stylelint.ignoreDisables": true,
+  "stylelint.reportInvalidScopeDisables": true,
+  "stylelint.reportNeedlessDisables": true,
+} 
