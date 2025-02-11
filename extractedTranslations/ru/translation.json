@@ -1,10 +1,17 @@
 {
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
+    " Debitis vero maxime, dolores quaerat cupiditate ratione eius veritatis explicabo sit, nostrum deserunt, hic blanditiis sequi distinctio quisquam aut odit architecto asperiores": {
+      "": ""
+    }
+  },
   "throw error": "throw error",
+  "Войти": "Войти",
   "Главная": "Главная",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
   "О сайте123123": "О сайте123123",
   "Обновить страницу": "Обновить страницу",
+  "Переключить": "Переключить",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
   "Язык": "Язык"
