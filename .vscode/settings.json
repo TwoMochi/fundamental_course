@@ -27,4 +27,5 @@
   "stylelint.ignoreDisables": true,
   "stylelint.reportInvalidScopeDisables": true,
   "stylelint.reportNeedlessDisables": true,
+  "i18n-ally.keystyle": "nested",
 } 
