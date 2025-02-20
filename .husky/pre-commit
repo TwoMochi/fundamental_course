@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
-=======
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
->>>>>>> 999aba008d0219c3daa580870e1897e97b7d6d8f
 
 npm run build:prod
 npm run lint:ts
