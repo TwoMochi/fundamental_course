@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: linting, testing, building
 on:
   push:
@@ -14,6 +15,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
+=======
+name: Linting, Testing, Building
+on: 
+  push:
+    branches: [master] # Убедитесь, что у вас именно main, а не master
+  pull_request:
+    branches: [master]
+jobs:
+  pipeline: # Исправлено с "pipline"
+    runs-on: ubuntu-latest
+    strategy: 
+      matrix:
+        node-version: [17.x] # Используем актуальные версии Node.js
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js ${{ matrix.node-version }}
+>>>>>>> 999aba008d0219c3daa580870e1897e97b7d6d8f
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -22,17 +41,32 @@ jobs:
       - name: build production project
         run: npm run build:prod
         if: always()
+<<<<<<< HEAD
       - name: linting typescript
+=======
+      - name: Lint TypeScript
+>>>>>>> 999aba008d0219c3daa580870e1897e97b7d6d8f
         run: npm run lint:ts
         if: always()
       - name: linting css
         run: npm run lint:scss
+<<<<<<< HEAD
       - name: unit testing
         if: always()
         run: npm run test:unit
+=======
+        if: always() 
+      - name: unit testing
+        run: npm run test:unit
+        if: always()
+>>>>>>> 999aba008d0219c3daa580870e1897e97b7d6d8f
       - name: build storybook
         run: npm run storybook:build
         if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
+<<<<<<< HEAD
         if: always()
+=======
+        if: always()
+>>>>>>> 999aba008d0219c3daa580870e1897e97b7d6d8f
