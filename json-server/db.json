@@ -25,10 +25,10 @@
       "password": "123"
     }
   ],
-  "profile": { 
+  "profile": {
     "first": "Тимур",
     "lastname": "Улби",
-    "age": "22",
+    "age": 22,
     "currency": "RUB",
     "country": "Russia",
     "city": "Moscow",
