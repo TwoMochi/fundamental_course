@@ -15,41 +15,47 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Staring Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: install modules
+      - name: Install dependencies
         run: npm install
 
-      - name: build production project
+      - name: Build production project
         run: npm run build:prod
         if: always()
 
-      - name: linting typescript
+      - name: Lint TypeScript
         run: npm run lint:ts
         if: always()
 
-      - name: linting css
+      - name: Lint SCSS
         run: npm run lint:scss
+        if: always()
 
-      - name: unit testing
+      - name: Run unit tests
         run: npm run test:unit
         if: always()
 
-      - name: build storybook
+      - name: Build Storybook
         run: npm run storybook:build
         if: always()
 
-      - name: screenshot testing
+      - name: Run UI tests (Loki)
         run: npm run test:ui:ci
         if: always()
 
+      # ✅ Генерация HTML-отчёта при падении Loki-тестов
+      - name: Generate Loki HTML Report
+        if: failure() # Только если тесты упали
+        run: npm run test:ui:report
+
+      # ✅ Загрузка отчёта в GitHub Actions Artifacts
       - name: Upload Loki Report
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: loki-report
-          path: .loki/difference
-          compression-level: 0 # Отключение сжатия
+          path: .loki/report.html
