@@ -56,4 +56,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: loki-full-report
-          path: .loki # Загружаем всю папку, включая difference, reference, current
+          path: .loki
