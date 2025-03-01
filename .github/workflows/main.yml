@@ -47,15 +47,13 @@ jobs:
         run: npm run test:ui:ci
         if: always()
 
-      # ✅ Генерация HTML-отчёта при падении Loki-тестов
       - name: Generate Loki HTML Report
         if: failure() # Только если тесты упали
         run: npm run test:ui:report
 
-      # ✅ Загрузка отчёта в GitHub Actions Artifacts
-      - name: Upload Loki Report
+      - name: Upload Loki Report (HTML + Images)
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: loki-report
-          path: .loki/report.html
+          name: loki-full-report
+          path: .loki # Загружаем всю папку, включая difference, reference, current

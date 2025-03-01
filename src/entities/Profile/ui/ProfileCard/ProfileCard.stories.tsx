@@ -25,6 +25,7 @@ Primary.args = {
         country: Country.Russia,
         city: 'Moscow',
         username: 'admin',
+        avatar,
     },
 };
 
