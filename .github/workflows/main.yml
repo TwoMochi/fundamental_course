@@ -47,8 +47,9 @@ jobs:
         if: always()
 
       - name: Upload Loki Report
-        if: failure() 
-        uses: actions/upload-artifact@v3
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
           name: loki-report
           path: .loki/difference
+          compression-level: 0 # Отключение сжатия
