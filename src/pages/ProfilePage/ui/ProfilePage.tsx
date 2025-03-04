@@ -19,6 +19,7 @@ import {
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { getUserAuthData } from 'entities/User';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -40,6 +41,8 @@ const ProfilePage = (props: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+
+    const indent = useSelector(getUserAuthData);
 
     const { t } = useTranslation('profile');
 
