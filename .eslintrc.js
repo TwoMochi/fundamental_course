@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'plugin:@typescript-eslint/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -24,9 +25,10 @@ module.exports = {
         'react-hooks',
     ],
     rules: {
+        indent: 'off',
+        '@typescript-eslint/indent': [2, 4],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.tsx', '.ts'] },
@@ -56,6 +58,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies,
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
     },
     globals: {
         __IS_DEV__: true,

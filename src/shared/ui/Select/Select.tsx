@@ -3,17 +3,17 @@ import { ChangeEvent, memo, useMemo } from 'react';
 import cls from './Select.module.scss';
 
 export interface SelectOption {
-  value?: string;
-  content?: string;
+    value?: string;
+    content?: string;
 }
 
 interface SelectProps {
-  className?: string;
-  label?: string;
-  options?: SelectOption[];
-  value?: string;
-  readonly?: boolean;
-  onChange?: (value: string) => void;
+    className?: string;
+    label?: string;
+    options?: SelectOption[];
+    value?: string;
+    readonly?: boolean;
+    onChange?: (value: string) => void;
 }
 
 export const Select = memo((props: SelectProps) => {

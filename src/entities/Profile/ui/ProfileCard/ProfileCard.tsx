@@ -11,19 +11,19 @@ import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
-  className?: string;
-  data?: Profile;
-  isLoading?: boolean;
-  error?: string;
-  readonly?: boolean;
-  onChangeFirstname?: (value?: string) => void;
-  onChangeLastname?: (value?: string) => void;
-  onChangeCity?: (value?: string) => void;
-  onChangeAge?: (value?: string) => void;
-  onChangeUsername?: (value?: string) => void;
-  onChangeAvatar?: (value?: string) => void;
-  onChangeCurrency?: (currency?: Currency) => void;
-  onChangeCountry?: (county?: Country) => void;
+    className?: string;
+    data?: Profile;
+    isLoading?: boolean;
+    error?: string;
+    readonly?: boolean;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeLastname?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency?: Currency) => void;
+    onChangeCountry?: (county?: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {

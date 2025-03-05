@@ -5,10 +5,10 @@ import { memo, useCallback } from 'react';
 import { Country } from '../../model/types/Country';
 
 interface CountrySelectProps {
-  className?: string;
-  value?: Country;
-  readonly?: boolean;
-  onChange?: (value: Country) => void;
+    className?: string;
+    value?: Country;
+    readonly?: boolean;
+    onChange?: (value: Country) => void;
 }
 
 const options = [

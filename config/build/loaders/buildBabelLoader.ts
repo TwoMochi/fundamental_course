@@ -2,7 +2,7 @@ import { BuildOptions } from '../types/config';
 
 export function buildBabelLoader({ isDev }: BuildOptions) {
     return {
-        test: /\.(js|jsx|tsx)$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',

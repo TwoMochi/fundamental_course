@@ -9,7 +9,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
-  className?: string;
+    className?: string;
 }
 
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {

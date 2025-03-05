@@ -27,7 +27,7 @@ const reducers: ReducersList = {
 };
 
 interface ProfilePageProps {
-  className?: string;
+    className?: string;
 }
 
 const ProfilePage = (props: ProfilePageProps) => {
