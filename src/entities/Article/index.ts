@@ -10,3 +10,4 @@ export {
 } from './model/types/articleDetailsSchema';
 
 export { Article } from './model/types/article';
+export { getArticleDetailsData } from './model/selectors/articleDetails';
