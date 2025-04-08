@@ -23,6 +23,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'twomochi-plugin',
     ],
     rules: {
         indent: 'off',
@@ -60,6 +61,7 @@ module.exports = {
         'no-undef': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
         'react/no-array-index-key': 'off',
+        'twomochi-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

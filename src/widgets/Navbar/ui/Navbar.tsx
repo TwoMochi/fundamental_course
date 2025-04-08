@@ -32,8 +32,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
-    console.log('Route', RoutePath.article_details);
-
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
