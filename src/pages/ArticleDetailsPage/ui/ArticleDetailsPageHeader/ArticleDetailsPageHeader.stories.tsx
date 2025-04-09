@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 export default {
     title: 'pages/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
+    decorators: [StoreDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },

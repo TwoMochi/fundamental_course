@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 
 export default {
     title: 'pages/Article/ArticlesPageFilters',
     component: ArticlesPageFilters,
+    decorators: [StoreDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
