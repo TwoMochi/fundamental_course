@@ -6,6 +6,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useSelector } from 'react-redux';
+import { getArticlesPageIsLoading } from '../../model/selectors/articlePageSelector';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
@@ -28,14 +30,17 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     const dispatch = useAppDispatch();
     const [searchParams] = useSearchParams();
+    const isLoading = useSelector(getArticlesPageIsLoading);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
     });
 
     const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
-    }, [dispatch]);
+        if (!isLoading) {
+            dispatch(fetchNextArticlesPage());
+        }
+    }, [dispatch, isLoading]);
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
