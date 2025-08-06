@@ -3,11 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Input } from 'shared/ui/Input/Input';
 import { Button } from 'shared/ui/Button/Button';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { HStack } from 'shared/ui/Stack';
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slices/addCommentFormSlice';
 import {
     getAddCommentFormError,
     getAddCommentFormText,
@@ -24,19 +30,19 @@ const reducers: ReducersList = {
 };
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
-    const {
-        className,
-        onSendComment,
-    } = props;
+    const { className, onSendComment } = props;
 
     const { t } = useTranslation('article-details');
     const text = useSelector(getAddCommentFormText);
     const error = useSelector(getAddCommentFormError);
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value));
-    }, [dispatch]);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(() => {
         onSendComment(text || '');
@@ -45,21 +51,20 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack max justify="between" className={classNames(cls.addCommentForm, {}, [className])}>
+            <HStack
+                max
+                justify="between"
+                className={classNames(cls.addCommentForm, {}, [className])}
+            >
                 <Input
                     className={cls.input}
                     value={text}
                     onChange={onCommentTextChange}
                     placeholder={t('Введите текст комментария')}
                 />
-                <Button
-                    onClick={onSendHandler}
-                >
-                    {t('Отправить')}
-                </Button>
+                <Button onClick={onSendHandler}>{t('Отправить')}</Button>
             </HStack>
         </DynamicModuleLoader>
-
     );
 });
 

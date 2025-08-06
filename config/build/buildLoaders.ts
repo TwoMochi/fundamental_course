@@ -5,6 +5,7 @@ import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
+
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -36,6 +37,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         svgLoader,
         codeBabelLoader,
         tsxCodeBabelLoader,
+        // typescriptLoader,
         cssLoader,
     ];
 }

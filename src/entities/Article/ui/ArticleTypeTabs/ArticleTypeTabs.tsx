@@ -7,40 +7,42 @@ import { ArticleType } from '../../model/consts/articleConsts';
 interface ArticleTypeTabsProps {
     className?: string;
     value: ArticleType;
-    onChangeType: (type:ArticleType) => void;
+    onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
-    const {
-        className,
-        value,
-        onChangeType,
-    } = props;
+    const { className, value, onChangeType } = props;
 
     const { t } = useTranslation('articles');
 
-    const typeTabs = useMemo<TabItem[]>(() => [
-        {
-            value: ArticleType.ALL,
-            content: t('Все статьи'),
-        },
-        {
-            value: ArticleType.ECONOMICS,
-            content: t('Экономика'),
-        },
-        {
-            value: ArticleType.SCIENCE,
-            content: t('Наука'),
-        },
-        {
-            value: ArticleType.IT,
-            content: t('Айти'),
-        },
-    ], [t]);
+    const typeTabs = useMemo<TabItem[]>(
+        () => [
+            {
+                value: ArticleType.ALL,
+                content: t('Все статьи'),
+            },
+            {
+                value: ArticleType.ECONOMICS,
+                content: t('Экономика'),
+            },
+            {
+                value: ArticleType.SCIENCE,
+                content: t('Наука'),
+            },
+            {
+                value: ArticleType.IT,
+                content: t('Айти'),
+            },
+        ],
+        [t],
+    );
 
-    const onTabClick = useCallback((tab: TabItem) => {
-        onChangeType(tab.value as ArticleType);
-    }, [onChangeType]);
+    const onTabClick = useCallback(
+        (tab: TabItem) => {
+            onChangeType(tab.value as ArticleType);
+        },
+        [onChangeType],
+    );
 
     return (
         <Tabs

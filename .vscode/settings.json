@@ -1,32 +1,40 @@
 {
-  "i18n-ally.localesPaths": [
-    "public/locales",
-    "src/shared/config/i18n"
-  ],
+    "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.fixAll.stylelint": "explicit"
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit"
     },
-  "eslint.codeActionsOnSave.mode": "all",
-  "eslint.run": "onSave",
-  "eslint.codeActionsOnSave.rules": null,
-  "stylelint.enable": true,
-  "css.validate": false,
-  "scss.validate": false,
-  "stylelint.snippet": [
-    "css",
-    "postcss",
-    "scss"
-  ],
-  "stylelint.validate": [
-    "css",
-    "postcss",
-    "scss"
-  ],
-  "stylelint.configFile": ".stylelintrc.json",
-  "stylelint.ignoreDisables": true,
-  "stylelint.reportInvalidScopeDisables": true,
-  "stylelint.reportNeedlessDisables": true,
-  "i18n-ally.keystyle": "nested",
-  "editor.cursorStyle": "line",
-} 
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.run": "onSave",
+    "eslint.codeActionsOnSave.rules": null,
+    "stylelint.enable": true,
+    "css.validate": false,
+    "scss.validate": false,
+    "stylelint.snippet": ["css", "postcss", "scss"],
+    "stylelint.validate": ["css", "postcss", "scss"],
+    "stylelint.configFile": ".stylelintrc.json",
+    "stylelint.ignoreDisables": true,
+    "stylelint.reportInvalidScopeDisables": true,
+    "stylelint.reportNeedlessDisables": true,
+    "i18n-ally.keystyle": "nested",
+    "editor.cursorStyle": "line",
+    "reactSnippets.settings.prettierEnabled": false,
+    "prettier.arrowParens": "always",
+    "prettier.prettierPath": "",
+    // "editor.formatOnSave": true,
+
+    // "editor.formatOnSave": true,
+    // "[javascript]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[typescript]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[typescriptreact]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[json]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "prettier.requireConfig": true
+}

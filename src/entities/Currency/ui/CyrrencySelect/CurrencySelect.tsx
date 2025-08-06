@@ -20,16 +20,16 @@ const options = [
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
     const {
-        className,
-        value,
-        readonly,
-        onChange,
+        className, value, readonly, onChange,
     } = props;
 
     const { t } = useTranslation('profile');
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Currency);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox
@@ -42,6 +42,5 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
             label={t('Укажите валюту')}
             direction="top right"
         />
-
     );
 });

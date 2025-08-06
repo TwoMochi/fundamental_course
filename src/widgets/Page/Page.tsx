@@ -19,11 +19,7 @@ interface PageProps {
 }
 
 export const Page = memo((props: PageProps) => {
-    const {
-        className,
-        children,
-        onScrollEnd,
-    } = props;
+    const { className, children, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
@@ -41,10 +37,12 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(uiActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            uiActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     }, 500);
 
     return (
@@ -54,7 +52,9 @@ export const Page = memo((props: PageProps) => {
             onScroll={onScroll}
         >
             {children}
-            {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
+            {onScrollEnd ? (
+                <div ref={triggerRef} className={cls.trigger} />
+            ) : null}
         </main>
     );
 });

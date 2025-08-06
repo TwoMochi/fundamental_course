@@ -12,10 +12,15 @@ describe('getProfileValidateErrors.test', () => {
                 ],
             },
         };
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(['INCORRECT_AGE', 'SERVER_ERROR']);
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual([
+            'INCORRECT_AGE',
+            'SERVER_ERROR',
+        ]);
     });
     test('with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
 });

@@ -10,21 +10,24 @@ import { fetchArticleRecommendations } from '../services/fetchArticleRecommendat
 
 const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
-
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState(),
+    (state) => state.articleDetailsPage?.recommendations
+            || recommendationsAdapter.getInitialState(),
 );
 
 const articleDetailsRecommendationsSlice = createSlice({
     name: 'articleDetailsRecommendationsSlice',
-    initialState: recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {},
-    }),
+    initialState:
+        recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+            {
+                isLoading: false,
+                error: undefined,
+                ids: [],
+                entities: {},
+            },
+        ),
     reducers: {},
     extraReducers: (builder) => {
         builder

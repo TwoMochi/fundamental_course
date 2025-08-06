@@ -1,6 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -35,10 +38,7 @@ const reducers: ReducersList = {
 };
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-    const {
-        className,
-        id,
-    } = props;
+    const { className, id } = props;
 
     const dispatch = useAppDispatch();
     const { t } = useTranslation('article-details');
@@ -88,7 +88,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton
+                    className={cls.avatar}
+                    width={200}
+                    height={200}
+                    border="50%"
+                />
                 <Skeleton className={cls.title} width={300} height={32} />
                 <Skeleton className={cls.skeleton} width={600} height={24} />
                 <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -103,7 +108,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     title={t('Произошла ошибка при загрузке статьи.')}
                 />
             </HStack>
-
         );
     } else {
         content = (
@@ -123,17 +127,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                         text={article?.subtitle}
                     />
                     <HStack gap="8" className={cls.articleInfo}>
-                        <Icon
-                            className={cls.icon}
-                            Svg={EyeIcon}
-                        />
+                        <Icon className={cls.icon} Svg={EyeIcon} />
                         <Text text={String(article?.views)} />
                     </HStack>
                     <HStack gap="8" className={cls.articleInfo}>
-                        <Icon
-                            className={cls.icon}
-                            Svg={CalendarIcon}
-                        />
+                        <Icon className={cls.icon} Svg={CalendarIcon} />
                         <Text text={article?.createdAt} />
                     </HStack>
                 </VStack>
@@ -144,7 +142,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack gap="16" max className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack
+                gap="16"
+                max
+                className={classNames(cls.ArticleDetails, {}, [className])}
+            >
                 {content}
             </VStack>
         </DynamicModuleLoader>

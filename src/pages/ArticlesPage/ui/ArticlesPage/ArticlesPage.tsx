@@ -1,7 +1,10 @@
 /* eslint-disable max-len */
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
@@ -24,9 +27,7 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const dispatch = useAppDispatch();
     const [searchParams] = useSearchParams();
@@ -52,7 +53,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
-
     );
 };
 

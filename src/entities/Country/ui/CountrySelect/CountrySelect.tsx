@@ -20,16 +20,16 @@ const options = [
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
     const {
-        className,
-        value,
-        readonly,
-        onChange,
+        className, value, readonly, onChange,
     } = props;
 
     const { t } = useTranslation('profile');
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox
@@ -42,6 +42,5 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             label={t('Укажите страну')}
             direction="top right"
         />
-
     );
 });

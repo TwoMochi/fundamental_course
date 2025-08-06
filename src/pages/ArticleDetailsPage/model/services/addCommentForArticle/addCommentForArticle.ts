@@ -5,7 +5,11 @@ import { getUserAuthData } from 'entities/User';
 import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
+export const addCommentForArticle = createAsyncThunk<
+Comment,
+string,
+ThunkConfig<string>
+>(
     'addCommentForm/sendCommentForm',
     async (text, {
         extra, dispatch, rejectWithValue, getState,

@@ -48,7 +48,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(
+                    cls.ProfileCard,
+                    { [cls.loading]: true },
+                    [className],
+                )}
+            >
                 <Loader />
             </HStack>
         );
@@ -56,7 +64,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
@@ -72,7 +87,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <VStack max gap="8" className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            max
+            gap="8"
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
                 <HStack justify="center" max className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} />
@@ -115,16 +134,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeUsername}
                 readonly={readonly}
             />
-            {!readonly
-                  && (
-                      <Input
-                          value={data?.avatar}
-                          placeholder={t('Введите ссылку на аватар')}
-                          className={cls.input}
-                          onChange={onChangeAvatar}
-                          readonly={readonly}
-                      />
-                  )}
+            {!readonly && (
+                <Input
+                    value={data?.avatar}
+                    placeholder={t('Введите ссылку на аватар')}
+                    className={cls.input}
+                    onChange={onChangeAvatar}
+                    readonly={readonly}
+                />
+            )}
             <CurrencySelect
                 className={cls.input}
                 value={data?.currency}

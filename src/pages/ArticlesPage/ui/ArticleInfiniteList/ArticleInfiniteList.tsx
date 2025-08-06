@@ -5,7 +5,9 @@ import { ArticleList } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import {
-    getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
+    getArticlesPageError,
+    getArticlesPageIsLoading,
+    getArticlesPageView,
 } from '../../model/selectors/articlePageSelector';
 import { getArticle } from '../../model/slice/artilesPageSlice';
 
@@ -14,9 +16,7 @@ interface ArticleInfiniteListProps {
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
     const articles = useSelector(getArticle.selectAll);

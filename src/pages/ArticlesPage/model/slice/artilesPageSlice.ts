@@ -5,7 +5,10 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
-    Article, ArticleView, ArticleSortField, ArticleType,
+    Article,
+    ArticleView,
+    ArticleSortField,
+    ArticleType,
 } from 'entities/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { SortOrder } from 'shared/types';
@@ -14,7 +17,6 @@ import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesLi
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
-
 });
 
 export const getArticle = articlesAdapter.getSelectors<StateSchema>(
@@ -41,7 +43,10 @@ const articlesPageSlice = createSlice({
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
-            localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
+            localStorage.setItem(
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
+                action.payload,
+            );
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
@@ -59,12 +64,13 @@ const articlesPageSlice = createSlice({
             state.type = action.payload;
         },
         initState: (state) => {
-            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const view = localStorage.getItem(
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
+            ) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
             state._inited = true;
         },
-
     },
     extraReducers: (builder) => {
         builder
@@ -93,8 +99,4 @@ const articlesPageSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articlesPageReducer,
-    actions: articlesPageActions,
-
-} = articlesPageSlice;
+export const { reducer: articlesPageReducer, actions: articlesPageActions } = articlesPageSlice;

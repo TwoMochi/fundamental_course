@@ -13,7 +13,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 
 const article = {
     id: '1',
@@ -27,12 +29,7 @@ const article = {
         username: 'ulbi',
         avatar: 'https://www.securitymagazine.com/ext/resources/2023/01/23/hacker-gc04371cad_1920.jpg?1674482112',
     },
-    type: [
-        'IT',
-        'SCIENCE',
-        'POLITICS',
-        'ECONOMICS',
-    ],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
         {
             id: '1',
@@ -112,25 +109,19 @@ isLoadingSmall.args = {
 export const ListBig = Template.bind({});
 ListBig.args = {
     isLoading: false,
-    articles:
-        new Array(9)
-            .fill(0)
-            .map((item, index) => ({
-                ...article,
-                id: String(index),
-            })),
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
     view: ArticleView.BIG,
 };
 
 export const ListSmall = Template.bind({});
 ListSmall.args = {
     isLoading: false,
-    articles:
-        new Array(9)
-            .fill(0)
-            .map((item, index) => ({
-                ...article,
-                id: String(index),
-            })),
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
     view: ArticleView.SMALL,
 };

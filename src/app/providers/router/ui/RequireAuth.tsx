@@ -6,14 +6,11 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface RequareAuthProps {
     children: JSX.Element;
-    roles?: UserRole[]
+    roles?: UserRole[];
 }
 
 export function RequireAuth(props: RequareAuthProps) {
-    const {
-        children,
-        roles,
-    } = props;
+    const { children, roles } = props;
 
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
@@ -32,11 +29,19 @@ export function RequireAuth(props: RequareAuthProps) {
     }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={RoutePath.main} state={{ from: location }} replace />;
+        return (
+            <Navigate to={RoutePath.main} state={{ from: location }} replace />
+        );
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />;
+        return (
+            <Navigate
+                to={RoutePath.forbidden}
+                state={{ from: location }}
+                replace
+            />
+        );
     }
     return children;
 }

@@ -11,9 +11,7 @@ interface NotificationListProps {
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
 
@@ -28,7 +26,6 @@ export const NotificationList = memo((props: NotificationListProps) => {
                 <Skeleton width="100%" border="8px" height="80px" />
                 <Skeleton width="100%" border="8px" height="80px" />
             </VStack>
-
         );
     }
 

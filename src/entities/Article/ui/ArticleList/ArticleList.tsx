@@ -10,7 +10,7 @@ import { Article } from '../../model/types/article';
 
 interface ArticleListProps {
     className?: string;
-    articles: Article[]
+    articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
@@ -19,7 +19,11 @@ interface ArticleListProps {
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
     .fill(0)
     .map((item, index) => (
-        <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+        <ArticleListItemSkeleton
+            className={cls.card}
+            key={index}
+            view={view}
+        />
     ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -39,25 +43,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
             article={article}
             view={view}
             className={cls.card}
-            key={article.id} // Добавили префикс для уникальности
+            key={article.id}
         />
     );
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null}
+        <div
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
+            {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
         </div>
-
     );
 });
