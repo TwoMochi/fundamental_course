@@ -91,7 +91,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const onChangeAvatar = useCallback(
         (value?: string) => {
-            dispatch(profileActions.updateProfile({ username: value || '' }));
+            dispatch(profileActions.updateProfile({ avatar: value || '' }));
         },
         [dispatch],
     );
