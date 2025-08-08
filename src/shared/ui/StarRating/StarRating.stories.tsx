@@ -32,4 +32,7 @@ export const SelectedDark = Template.bind({});
 SelectedDark.args = {
     selectedStars: 3,
 };
-SelectedDark.decorators = [ThemeDecorator(Theme.DARK)];
+SelectedDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+
+];
