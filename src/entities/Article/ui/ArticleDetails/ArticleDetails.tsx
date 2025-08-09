@@ -145,6 +145,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             <VStack
                 gap="16"
                 max
+                data-testid="ArticleDetails"
                 className={classNames(cls.ArticleDetails, {}, [className])}
             >
                 {content}

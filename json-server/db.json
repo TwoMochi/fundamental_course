@@ -549,6 +549,71 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://cs13.pikabu.ru/post_img/big/2020/07/09/9/1594303704117534516.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "wGC8fJn"
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://cs13.pikabu.ru/post_img/big/2020/07/09/9/1594303704117534516.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "QHIATvB"
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://cs13.pikabu.ru/post_img/big/2020/07/09/9/1594303704117534516.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "absw5Cl"
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://cs13.pikabu.ru/post_img/big/2020/07/09/9/1594303704117534516.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "sS6L2oq"
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://cs13.pikabu.ru/post_img/big/2020/07/09/9/1594303704117534516.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "awp5dJ9"
     }
   ],
   "comments": [
@@ -682,6 +747,15 @@
         "MANAGER"
       ],
       "avatar": "https://media.istockphoto.com/id/1386179512/photo/computer-hacker-stealing-data-from-a-laptop.jpg?s=612x612&w=0&k=20&c=uaPBMvpmnqgulWYWnHqgEqec3OWwwCjv7k9D_VAeDV0="
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://cdn.pixabay.com/photo/2017/10/24/07/12/hacker-2883632_640.jpg"
     }
   ],
   "profile": [
@@ -706,6 +780,17 @@
       "city": "Moscow",
       "username": "admin_last",
       "avatar": "https://media.istockphoto.com/id/1386179512/photo/computer-hacker-stealing-data-from-a-laptop.jpg?s=612x612&w=0&k=20&c=uaPBMvpmnqgulWYWnHqgEqec3OWwwCjv7k9D_VAeDV0="
+    },
+    {
+      "id": "4",
+      "first": "testFirst",
+      "lastname": "testLastName",
+      "age": 5,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "testUsername",
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F3296133.png&f=1&nofb=1&ipt=1e9d701391901fe0c337b0022a75a1e5a011083e9174616a3971f8ace5d2267e"
     }
   ],
   "article-ratings": [

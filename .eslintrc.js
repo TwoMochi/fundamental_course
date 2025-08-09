@@ -80,6 +80,7 @@ module.exports = {
         'react/prop-types': 'warn',
         'storybook/no-renderer-packages': 'off',
         '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/no-namespace': 'off',
         'react/no-array-index-key': 'off',
         'twomochi-plugin/path-checker': ['error', { alias: '@' }],
         'twomochi-plugin/public-api-imports': ['error',
